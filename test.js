@@ -1,9 +1,12 @@
 const request = require('supertest');
- const app = require('../index.js'); // Adjust if your app filename is app.js
- describe('GET /nonexistentpage', function() {
-   it('should respond with 404 Not Found', function(done) {
-     request(app)
-       .get('/nonexistentpage')
-       .expect(404, done); // This is a cleaner way to end test if only checking status
-   });
- });
+const app = require('./index.js');  // ✅ corrected path
+
+describe('GET /', function () {
+  it('should return 200 OK and "Hello, World!"', function (done) {
+    request(app)
+      .get('/')
+      .expect(200)
+      .expect('Hello, World!', done);
+  });
+});
+
