@@ -1,20 +1,21 @@
 {
-  "name": "simple-node-app",
+  "name": "nodejsapp",
   "version": "1.0.0",
-  "description": "A simple Node.js application with Express",
+  "description": "Simple Node.js app with test support",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha"
+    "test": "mocha test.js"
   },
-  "author": "Your Name",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.4"
-  },
   "devDependencies": {
-    "supertest": "^7.1.1",
-    "mocha": "^11.7.1"
+    "mocha": "^10.0.0",
+    "supertest": "^6.3.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
 

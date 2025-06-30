@@ -1,7 +1,13 @@
+// test.js
 const request = require('supertest');
-const app = require('./index.js');  // ✅ corrected path
+const { app, server } = require('./index'); // Adjust path if needed
 
 describe('GET /', function () {
+  // Close the server after tests to prevent open handles
+  after(() => {
+    server.close();
+  });
+
   it('should return 200 OK and "Hello, World!"', function (done) {
     request(app)
       .get('/')
